@@ -4,4 +4,4 @@ This should be run with anaconda and the following is required before executing 
 conda create -n webd -c bioconda -y \
 conda activate webd \
 conda install pip spyder -y \ 
-pip install requests pubchempy pandas
+pip install requests pubchempy pandas \
