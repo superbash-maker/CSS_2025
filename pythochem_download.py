@@ -20,11 +20,11 @@ base = 'https://phytochem.nal.usda.gov'
 # Change range according to first and last entry of webpage search
 for bio in range(1, 21):
     compurl = "/biological-activities-chemicals-csv-export/"+str(bio)+"/all?page&_format=csv"
-    # Send a GET request to the webpage
-    res = req.get(base+compurl)
     if os.path.isfile("bioact/"+str(bio)+".csv"):
         print(str(bio)+" already downloaded")
     else:
+        # Send a GET request to the webpage
+        res = req.get(base+compurl)
         csv = open("bioact/"+str(bio)+".csv","wb")
         csv.write(res.content)
         csv.close()
